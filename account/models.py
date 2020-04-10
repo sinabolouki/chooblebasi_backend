@@ -6,7 +6,7 @@ class User (models.Model):
         verbose_name = 'کاربر'
         verbose_name_plural = 'کاربر'
 
-    user_name = models.CharField(pk = True , max_length = 20)
+    user_name = models.CharField(primary_key = True , max_length = 20)
     phone_number = models.CharField(max_length = 11)
     email_address = models.CharField(max_length = 60)
     name = models.CharField(max_length = 20)
