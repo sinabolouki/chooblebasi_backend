@@ -1,6 +1,13 @@
 from django.db import models
 
-
+SHIRT = 1
+PANTS = 2
+SHOE = 3
+kind_choices = (
+        (SHIRT, 'لباس'),
+        (PANTS, 'شلوار'),
+        (SHOE, 'کفش'),
+    )
 # Create your models here.
 class Clothing(models.Model):
     class Meta:
@@ -9,14 +16,7 @@ class Clothing(models.Model):
 
     size = models.IntegerField()
     color = models.CharField(max_length=20)
-    SHIRT = 1
-    PANTS = 2
-    SHOE = 3
-    kind_choices = (
-        (SHIRT, 'لباس'),
-        (PANTS, 'شلوار'),
-        (SHOE, 'کفش'),
-    )
+    name = models.CharField(max_length=50)
     kind = models.IntegerField(choices=kind_choices)
 
     def __str__(self):
